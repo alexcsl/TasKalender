@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">TasKalender</string>
+
+    <!-- Login Page -->
+    <string name="login_title">Login</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="go_to_register_prompt">Don\'t have an account? Register</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_invalid_email">Invalid email format</string>
+    <string name="error_password_short">Password must be at least 6 characters</string>
+
+    <!-- Register Page -->
+    <string name="register_title">Register</string>
+    <string name="username_hint">Username</string>
+    <string name="phone_hint">Phone Number</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="dob_hint">Date of Birth (DD/MM/YYYY)</string>
+    <string name="register_button">Register</string>
+    <string name="go_to_login_prompt">Already have an account? Login</string>
+    <string name="error_passwords_do_not_match">Passwords do not match</string>
+
+    <!-- Task -->
+    <string name="add_new_task">Add new task</string>
+    <string name="due_date_prefix">Due: %1$s</string>
+    <string name="title_add_task">Add Task</string>
+    <string name="title_edit_task">Edit Task</string>
+    <string name="hint_task_title">Task Title</string>
+    <string name="label_due_date">Due Date</string>
+    <string name="label_category">Category</string>
+    <string name="button_save_task">Save Task</string>
+    <string name="button_delete_task">Delete Task</string>
+    <string name="default_task_category">Other</string>
+    <string name="task_category_home">Home</string>
+    <string name="task_category_work">Work</string>
+    <string name="task_category_other">Other</string>
+    <string name="task_category_all">All</string>
+    <string name="title_tasks_for_date">Tasks for %1$s</string>
+    <string name="no_tasks_for_selected_date">No unfinished tasks for this date.</string>
+    <string name="no_recent_notes">No recent notes to display.</string>
+    <string name="due_date_prefix_simple">Due: %1$s</string>
+    <string name="created_date_prefix">Created: %1$s</string>
+    <string name="no_tasks_found_placeholder">No tasks found.</string>
+    <string name="button_update_task">Update Task</string>
+    <string name="delete_task_description">Delete task</string>
+
+    <!-- Common -->
+    <string name="cd_calendar_icon">Calendar Icon</string>
+
+    <!-- Bottom nav -->
+    <string name="title_home">Home</string>
+    <string name="title_cash">Cash</string>
+    <string name="title_task">Task</string>
+    <string name="title_notes">Notes</string>
+    <string name="title_profile">Profile</string>
+
+    <!-- Placeholder fragment labels -->
+    <string name="label_home_fragment">Home Fragment</string>
+    <string name="label_cash_fragment">Cash Fragment</string>
+    <string name="label_task_fragment">Task Fragment</string>
+    <string name="label_notes_fragment">Notes Fragment</string>
+    <string name="label_profile_fragment">Profile Fragment</string>
+
+    <!-- Delete Task -->
+    <string name="button_delete_task_dialog">Delete Task</string>
+    <string name="confirm_delete_task_title">Confirm Delete</string>
+    <string name="confirm_delete_task_message">Are you sure you want to delete "%1$s"? This action cannot be undone.</string>
+
+    <!-- Notes -->
+    <plurals name="numberOfNotes">
+        <item quantity="one">%d note</item>
+        <item quantity="other">%d notes</item>
+    </plurals>
+
+
+
+</resources>

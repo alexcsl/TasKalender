@@ -1,0 +1,34 @@
+# Built files
+build/
+*.apk
+*.aab
+
+# Firebase secrets
+app/google-services.json
+**/service_account.json
+**/apikey.properties
+
+# Environment variables
+.env
+.env.*
+*.env
+
+# Android Studio
+*.iml
+.gradle/
+.idea/
+captures/
+.externalNativeBuild
+.cxx/
+local.properties  # Contains SDK path and potentially secrets
+
+# Keystores
+*.jks
+*.keystore
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

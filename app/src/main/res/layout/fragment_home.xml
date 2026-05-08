@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.home.HomeFragment"
+    android:background="@color/app_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <CalendarView
+            android:id="@+id/calendarViewHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppCalendarViewStyle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Tasks Label -->
+        <TextView
+            android:id="@+id/textViewTasksLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tasks for Selected Date"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="?attr/colorOnSurface"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/calendarViewHome"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- Tasks RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewTasksHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:minHeight="80dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewTasksLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_task_home"
+            tools:itemCount="2"/>
+
+        <TextView
+            android:id="@+id/textViewNoTasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No unfinished tasks for this date."
+            android:visibility="gone"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintTop_toTopOf="@id/recyclerViewTasksHome"
+            app:layout_constraintBottom_toBottomOf="@id/recyclerViewTasksHome"
+            app:layout_constraintStart_toStartOf="@id/recyclerViewTasksHome"
+            app:layout_constraintEnd_toEndOf="@id/recyclerViewTasksHome"/>
+
+        <!-- Notes Label -->
+        <TextView
+            android:id="@+id/textViewNotesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent Notes"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="?attr/colorOnSurface"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewTasksHome"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- Notes RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewNotesHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewNotesLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/item_note_home"
+            tools:itemCount="3"/>
+
+        <TextView
+            android:id="@+id/textViewNoNotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No recent notes to display."
+            android:visibility="gone"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_constraintTop_toTopOf="@id/recyclerViewNotesHome"
+            app:layout_constraintBottom_toBottomOf="@id/recyclerViewNotesHome"
+            app:layout_constraintStart_toStartOf="@id/recyclerViewNotesHome"
+            app:layout_constraintEnd_toEndOf="@id/recyclerViewNotesHome"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

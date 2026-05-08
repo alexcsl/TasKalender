@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.notes.FolderDetailFragment"
+    android:background="@color/app_background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout_folder_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="?attr/actionBarTheme">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_folder_detail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationIcon="@drawable/ic_chevron_left_24"
+        app:navigationIconTint="?attr/colorOnSurface"
+        app:titleTextColor="?attr/colorOnSurface"
+        tools:title="Folder Name"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_notes_in_folder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:paddingTop="10dp"
+        android:paddingBottom="88dp"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_note_detail"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar_notes_in_folder"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_anchor="@id/recyclerView_notes_in_folder"
+            app:layout_anchorGravity="center"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/textView_no_notes_in_folder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This folder is empty. Add a note!"
+            android:visibility="gone"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            app:layout_anchor="@id/recyclerView_notes_in_folder"
+            app:layout_anchorGravity="center"
+            tools:visibility="visible"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_note_to_folder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add_note_24"
+        app:tint="?attr/colorOnSecondaryContainer"
+        app:backgroundTint="?attr/colorSecondaryContainer"
+        android:contentDescription="Add New Note to Folder"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

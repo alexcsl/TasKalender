@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App's Black and Yellow Palette -->
+    <color name="app_primary_black">#121212</color>
+    <color name="app_primary_variant_black">#000000</color>
+    <color name="app_on_primary_text">#FFFFFF</color>
+
+    <color name="app_accent_yellow">#FFEB3B</color>
+    <color name="app_accent_yellow_darker">#FBC02D</color>
+    <color name="app_on_accent_text_black">#000000</color> <!-- For text on yellow -->
+    <color name="app_on_accent_text_darkgrey">#212121</color> <!-- Alternative for text on yellow -->
+
+    <color name="app_background">@color/app_primary_black</color>
+    <color name="app_surface">#1E1E1E</color> <!-- For cards, dialogs, text field background -->
+    <color name="app_on_background_text">#E0E0E0</color> <!-- Light grey text -->
+    <color name="app_on_surface_text">#FFFFFF</color> <!-- White text on surfaces/input fields -->
+
+    <color name="app_error_red">#CF6679</color> <!-- Material Dark Error Red -->
+    <color name="app_on_error_text">#000000</color> <!-- Text on error backgrounds -->
+
+    <!-- Tints for Icons and inactive elements -->
+    <color name="icon_tint_inactive">#9E9E9E</color>  <!-- Grey for inactive -->
+    <color name="icon_tint_active">@color/app_accent_yellow</color> <!-- Yellow for active icons -->
+
+    <!-- Default/Placeholder colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Cash Fragment -->
+    <color name="income_color">#00BF00</color>
+    <color name="expense_color">#FA003F</color>
+</resources>

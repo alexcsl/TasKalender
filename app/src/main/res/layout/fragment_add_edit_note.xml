@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.notes.AddEditNoteFragment"
+    android:background="@color/app_background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout_add_edit_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="?attr/actionBarTheme">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_add_edit_note"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_chevron_left_24"
+            app:navigationIconTint="?attr/colorOnSurface"
+            app:titleTextColor="?attr/colorOnSurface"
+            tools:title="New Note"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_note_title"
+                style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxBackgroundColor="?attr/colorSurface"
+                android:hint="Title">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_note_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"
+                android:textAppearance="?attr/textAppearanceHeadline6"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <EditText
+            android:id="@+id/et_note_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:hint="Write your note here..."
+            android:inputType="textMultiLine|textCapSentences"
+            android:gravity="top|start"
+            android:background="@null"
+            android:padding="8dp"
+            android:scrollbars="vertical"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="?attr/colorOnSurface"
+            android:textColorHint="?attr/colorOnSurfaceVariant"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+    android:id="@+id/progressBar_add_edit_note"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:visibility="gone"
+    tools:visibility="visible"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>

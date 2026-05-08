@@ -1,0 +1,50 @@
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="?attr/colorSurfaceVariant"
+    app:strokeWidth="0dp"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/textView_home_task_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBodyLarge"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            tools:text="Task Title on Home"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/checkbox_home_task_completed"/>
+
+        <TextView
+            android:id="@+id/textView_home_task_due_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:textColor="@color/icon_tint_inactive"
+            tools:text="Due: Today"
+            app:layout_constraintTop_toBottomOf="@id/textView_home_task_title"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <CheckBox
+            android:id="@+id/checkbox_home_task_completed"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            app:buttonTint="@color/app_accent_yellow"
+            app:layout_constraintTop_toTopOf="@id/textView_home_task_title"
+            app:layout_constraintBottom_toBottomOf="@id/textView_home_task_due_date"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

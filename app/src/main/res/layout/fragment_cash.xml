@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.cash.CashFragment"
+    android:background="@color/app_background"
+    android:padding="16dp">
+
+    <!-- Month Navigator -->
+    <ImageButton
+        android:id="@+id/button_prev_month"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_chevron_left_24"
+        app:tint="?attr/colorOnSurface"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="Previous Month"/>
+
+    <TextView
+        android:id="@+id/textView_month_year_cash"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:text="June 2025"
+        android:gravity="center"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintTop_toTopOf="@id/button_prev_month"
+        app:layout_constraintBottom_toBottomOf="@id/button_prev_month"
+        app:layout_constraintStart_toEndOf="@id/button_prev_month"
+        app:layout_constraintEnd_toStartOf="@id/button_next_month"/>
+
+    <ImageButton
+        android:id="@+id/button_next_month"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_chevron_right_24"
+        app:tint="?attr/colorOnSurface"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="@id/button_prev_month"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Next Month"/>
+
+    <!-- Top Row: Pie Chart and Total Amount (Net Balance) -->
+    <LinearLayout
+        android:id="@+id/layout_chart_and_total"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:baselineAligned="false"
+        app:layout_constraintTop_toBottomOf="@id/button_prev_month"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pieChart_cash_flow"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="1.2" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_vertical|end"
+            android:layout_gravity="center_vertical"
+            android:paddingStart="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Amount"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?attr/colorOnSurfaceVariant"/>
+            <TextView
+                android:id="@+id/textView_net_balance_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Rp 3,500,000"
+                android:textColor="?attr/colorOnSurface"
+                android:textStyle="bold"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Second Row: Total Income and Total Expenses -->
+    <LinearLayout
+        android:id="@+id/layout_income_expense_totals"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/layout_chart_and_total"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Total Income -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_downward_24"
+                app:tint="@color/income_color"
+                android:background="@drawable/background_circle_income_expense" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Income"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    android:textColor="?attr/colorOnSurfaceVariant"/>
+                <TextView
+                    android:id="@+id/textView_total_income_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="+ Rp 5,000,000"
+                    android:textColor="@color/income_color"
+                    android:textStyle="bold"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Total Expenses -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_arrow_upward_24"
+                app:tint="@color/expense_color"
+                android:background="@drawable/background_circle_income_expense" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Expenses"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    android:textColor="?attr/colorOnSurfaceVariant"/>
+                <TextView
+                    android:id="@+id/textView_total_expense_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="- Rp 1,500,000"
+                    android:textColor="@color/expense_color"
+                    android:textStyle="bold"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- RecyclerView for Transactions -->
+    <TextView
+        android:id="@+id/textView_transactions_list_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transactions"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/layout_income_expense_totals"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_transactions"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/textView_transactions_list_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_transaction"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_cash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/recyclerView_transactions"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerView_transactions"
+        app:layout_constraintStart_toStartOf="@id/recyclerView_transactions"
+        app:layout_constraintEnd_toEndOf="@id/recyclerView_transactions"
+        android:layout_marginTop="32dp"
+        tools:visibility="visible"/>
+
+    <TextView
+        android:id="@+id/textView_no_transactions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No transactions for this month."
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/recyclerView_transactions"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerView_transactions"
+        app:layout_constraintStart_toStartOf="@id/recyclerView_transactions"
+        app:layout_constraintEnd_toEndOf="@id/recyclerView_transactions"
+        android:layout_marginTop="32dp"
+        tools:visibility="visible"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_transaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:src="@drawable/ic_add_24"
+        app:tint="?attr/colorOnSecondaryContainer"
+        app:backgroundTint="?attr/colorSecondaryContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Add New Transaction"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

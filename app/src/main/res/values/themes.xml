@@ -1,0 +1,166 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ================================= BASE APPLICATION THEME ================================= -->
+    <style name="Base.Theme.TasKalender" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primary brand color (Blacks) -->
+        <item name="colorPrimary">@color/app_primary_black</item>
+        <item name="colorOnPrimary">@color/app_on_primary_text</item>
+        <item name="colorPrimaryContainer">@color/app_surface</item>
+        <item name="colorOnPrimaryContainer">@color/app_accent_yellow</item>
+
+        <!-- Secondary brand color (Yellows) -->
+        <item name="colorSecondary">@color/app_accent_yellow</item>
+        <item name="colorOnSecondary">@color/app_on_accent_text_black</item>
+        <item name="colorSecondaryContainer">@color/app_accent_yellow</item> <!-- For active indicators -->
+        <item name="colorOnSecondaryContainer">@color/app_on_accent_text_black</item> <!-- Text/icon on active indicators -->
+
+        <!-- Error colors -->
+        <item name="colorError">@color/app_error_red</item>
+        <item name="colorOnError">@color/app_on_error_text</item> <!-- Text on error backgrounds -->
+        <item name="colorErrorContainer">@color/app_error_red</item> <!-- Background for error elements -->
+        <item name="colorOnErrorContainer">@color/app_on_error_text</item>
+
+        <!-- Background and Surface colors -->
+        <item name="android:colorBackground">@color/app_background</item>
+        <item name="colorOnBackground">@color/app_on_background_text</item>
+        <item name="colorSurface">@color/app_surface</item>
+        <item name="colorOnSurface">@color/app_on_surface_text</item>
+        <item name="colorSurfaceVariant">#303030</item> 
+        <item name="colorOnSurfaceVariant">@color/app_on_background_text</item> 
+        <item name="colorOutline">@color/icon_tint_inactive</item> <!-- Outline for components like outlined text fields (unfocused) -->
+        <item name="colorOutlineVariant">@color/app_accent_yellow</item> <!-- Outline for components when active/focused -->
+
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/app_primary_variant_black</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+
+        <!-- Navigation bar color (bottom system navigation) -->
+        <item name="android:navigationBarColor">@color/app_primary_variant_black</item>
+
+        <!-- Apply custom component styles globally -->
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+        <item name="textInputStyle">@style/Widget.App.TextInputLayout.Outlined</item>
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
+    </style>
+
+    <!-- Final App Theme (inherits from Base) -->
+    <style name="Theme.TasKalender" parent="Base.Theme.TasKalender" />
+
+    <!-- SPLASH SCREEN -->
+    <style name="Theme.TasKalender.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/app_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/tas_kalender_logo</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.TasKalender</item>
+    </style>
+
+    <!-- ================================= CUSTOM COMPONENT STYLES ================================= -->
+
+    <!-- Custom Global Button Style (Yellow Button with Black Text) -->
+    <style name="Widget.App.Button" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/app_on_accent_text_black</item>
+        <item name="backgroundTint">@color/app_accent_yellow</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!-- Custom Global Outlined TextInputLayout Style -->
+    <style name="Widget.App.TextInputLayout.Outlined" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <!-- Stroke color (the outline) uses a selector -->
+        <item name="boxStrokeColor">@color/text_input_layout_stroke_color_selector</item>
+        <!-- Hint text color uses a selector -->
+        <item name="hintTextColor">@color/text_input_layout_hint_color_selector</item>
+        <!-- Actual text color inside the EditText -->
+        <item name="android:textColor">@color/app_on_surface_text</item>
+        <!-- Background of the EditText area within the outline -->
+        <item name="boxBackgroundColor">@color/app_surface</item>
+        <!-- Start icon tint -->
+        <item name="startIconTint">@color/icon_tint_active</item>
+        <!-- End icon tint (e.g., password toggle, clear button) -->
+        <item name="endIconTint">@color/icon_tint_active</item>
+    </style>
+
+    <!-- Custom BottomNavigationView Style -->
+    <style name="Widget.App.BottomNavigationView" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <!-- Tint for icons and text (uses a selector for active/inactive states) -->
+        <item name="itemIconTint">@color/bottom_nav_item_tint_selector</item>
+        <item name="itemTextColor">@color/bottom_nav_item_tint_selector</item>
+        <!-- Style for the active item indicator (the "pill" shape) -->
+        <item name="itemActiveIndicatorStyle">@style/App.BottomNavigation.ActiveIndicator</item>
+        <!-- Background of the BottomNavigationView itself -->
+        <item name="android:background">@color/app_primary_variant_black</item>
+    </style>
+
+    <!-- Style for Bottom Navigation Active Item Indicator -->
+    <style name="App.BottomNavigation.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:width">64dp</item>
+        <item name="android:height">48dp</item>
+        <item name="marginHorizontal">8dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.BottomNav.IndicatorPill</item>
+        <item name="android:color">@color/app_accent_yellow</item>
+    </style>
+
+    <!-- Shape for the Bottom Navigation Active Item Indicator -->
+    <style name="ShapeAppearance.App.BottomNav.IndicatorPill" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <!-- Calendar... -->
+    <style name="AppCalendarViewStyle" parent="ThemeOverlay.AppCompat.Dark">
+        <!-- Color for the selected day's circular highlight/background -->
+        <item name="android:colorAccent">@color/app_accent_yellow</item>
+
+        <!-- Background of the entire CalendarView widget. -->
+        <item name="android:background">@color/app_background</item>
+
+        <!-- Text appearance for the weekday headers (S, M, T, W, T, F, S) -->
+        <item name="android:weekDayTextAppearance">@style/AppCalendarView.WeekDayText</item>
+
+        <!-- Text appearance for the individual date numbers -->
+        <item name="android:dateTextAppearance">@style/AppCalendarView.DateText</item>
+
+        <!-- Background color of the selected week (the row containing the selected date) -->
+        <item name="android:selectedWeekBackgroundColor">@color/app_primary_black</item>
+
+    </style>
+
+    <style name="AppCalendarView.WeekDayText" parent="TextAppearance.AppCompat.Caption">
+        <!-- Make weekday letters (S, M, T, etc.) white or light grey -->
+        <item name="android:textColor">@color/app_on_background_text</item>
+    </style>
+
+    <style name="AppCalendarView.DateText" parent="TextAppearance.AppCompat.Body1">
+        <!-- Make date numbers (1, 2, 3, etc.) white -->
+        <item name="android:textColor">@color/app_on_surface_text</item>
+    </style>
+
+    <!-- Tab Layout -->
+    <style name="AppTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/tab_text_color_selector</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="App.Widget.TabLayout.NoIndicator" parent="Base.Widget.Design.TabLayout">
+        <item name="tabIndicatorHeight">0dp</item>
+        <item name="tabIndicatorColor">@android:color/transparent</item>
+        <item name="tabIndicator">@null</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="tabBackground">@drawable/tab_background_selector</item>
+        <item name="tabSelectedTextColor">@color/app_on_accent_text_black</item>
+        <item name="tabTextColor">@color/icon_tint_inactive</item>
+        <item name="tabRippleColor">@android:color/transparent</item>
+        <item name="tabTextAppearance">@style/AppTabTextAppearance</item>
+    </style>
+
+    <style name="ShapeAppearance.App.CircleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+</resources>

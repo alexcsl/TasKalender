@@ -1,0 +1,13 @@
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textView_note_group_header_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="8dp"
+    tools:text="Last 30 Days"
+    android:textAppearance="?attr/textAppearanceTitleMedium"
+    android:textColor="?attr/colorOnSurface"
+    android:textStyle="bold"/>

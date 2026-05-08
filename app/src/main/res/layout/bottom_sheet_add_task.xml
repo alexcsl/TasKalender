@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="?attr/colorSurface">
+
+    <TextView
+        android:id="@+id/textView_add_task_title_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_add_task"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Task Title Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_add_task_title"
+        style="@style/Widget.App.TextInputLayout.Outlined"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/ic_title_24"
+        app:startIconTint="@color/app_accent_yellow">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_add_task_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_task_title"
+            android:inputType="textCapSentences"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Due Date Picker -->
+    <TextView
+        android:id="@+id/textView_add_task_due_date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/label_due_date"
+        android:textAppearance="?attr/textAppearanceLabelLarge"
+        android:textColor="?attr/colorOnSurfaceVariant"/>
+
+    <TextView
+        android:id="@+id/tv_add_task_due_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="12dp"
+        android:background="@drawable/background_clickable_textview"
+        android:drawableEnd="@drawable/ic_calendar_24"
+        android:drawableTint="@color/app_accent_yellow"
+        android:gravity="center_vertical"
+        android:textAppearance="?attr/textAppearanceBodyLarge"
+        android:textColor="?attr/colorOnSurface"
+        tools:text="20 May 2025"/>
+
+    <!-- Save/Update Task Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_save_task"
+        style="@style/Widget.App.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/button_save_task" />
+
+    <!-- Delete Task Text Button -->
+    <TextView
+        android:id="@+id/tv_delete_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_delete_task_dialog"
+        android:textColor="@color/app_error_red"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+</LinearLayout>
